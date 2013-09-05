@@ -1,0 +1,28 @@
+body{
+	margin:0;
+}
+
+#logo {
+	background-color: ;
+	height: 125px;
+}
+#menu ul li{
+	background-color:;
+	text-align: right;
+	display: inline;
+
+}
+
+
+#menu {
+	background-color:;
+	height: 125px;
+}
+
+#titulo {
+	color:white;
+	text-align: center;
+	font-size: 2em;
+
+	padding: 1px;
+}
