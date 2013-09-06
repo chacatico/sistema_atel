@@ -1,0 +1,161 @@
+<?php
+
+if(isset($_GET["e"]))
+{
+	switch ($_GET['e']) {
+		case '1':
+			$mensaje = "Debes ingresar tus datos para accesar";
+			break;
+		
+		case '2':
+			$mensaje = "El Usuario no existe";
+			break;
+		case '3';
+			$mensaje = "El usuario ya ha inciado Sesión.";
+			break;
+
+		default:
+			header("location: ".Conectar::ruta()."?accion=error");
+			break;
+	}
+}
+
+?>
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+    <script type="text/javascript">
+    	var f =1;
+    	var numFotos = 3;
+    	var t;
+    	
+    	$(document).ready(inicio);
+
+    	function inicio()
+    	{
+    		t = setTimeout(cargaFoto, 5000);
+
+    		$("#izq_slide").click(function(){
+    			clearTimeout(t);
+    			f -=2;
+    			if(f < 0) f = numFotos -1;
+    			cargaFoto();
+    		});
+
+    		$("#der_slide").click(function(){
+    			clearTimeout(t);
+    			cargaFoto();
+    		});
+    	}
+
+    	function cargaFoto()
+    	{
+    		f++;
+    		if(f>numFotos) f = 1;
+    		$("#foto").fadeOut(1000,cambiaFoto);
+    	}
+
+    	function cambiaFoto()
+    	{
+    		$("#foto").attr("src", "public/img/img_servicio_"+f+".png");
+    		$("#foto").fadeIn(1000);
+    		t = setTimeout(cargaFoto, 5000);
+    	}
+
+	</script>	
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+	<section id="menu">
+		<div class="span12 offset2" id="contenido" style="background:;">
+			<?php 
+			require_once('menu.phtml');
+			?>
+			
+			<div>
+				<?php
+					require_once('views/panel.phtml');
+				?>
+			</div>
+			<div class="" id="carosel" style="background:;">
+				<article class="slide">
+					<img id="foto" src="public/img/img_servicio_1.png" width="620" height>
+					<div id="izq_slide">
+						<img src="public/img/arr_izq.png">
+					</div>
+					<div id="der_slide">
+						<img src="public/img/arr_der.png">
+					</div>
+				</article>
+			</div>
+			
+			<div class="row">
+				<div class="span8">
+					<div id="cursos" class="well">
+						
+						<h2>Cursos Realizados</h2>
+						
+						<div class="row-fluid">
+							<div class="span2" id="img_curso_i">
+
+							</div>
+
+							<div class="span4" id="img_curso_i">
+
+							</div>
+
+							<div class="span6" id="img_curso_i">
+
+							</div>
+
+						</div>
+						<hr>
+						
+					</div>
+				</div>
+			</div>
+			<div class="span8" style="background:;">
+				
+			
+			<div>
+					
+			</div>
+
+				
+
+			</div>
+		</div>
+	</section>
+	</div>
+
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/carousel.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/bootstrap-transition.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+    <script src="<?php echo Conectar::ruta();?>public/js/funciones.js"></script>
+</body>
+
+</html>

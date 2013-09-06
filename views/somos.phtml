@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+		<section id="menu">
+			<div class="span12 offset2" id="contenido" style="background:;">
+				<?php 
+					require_once('menu.phtml');
+				?>
+				
+				<div>
+					<?php
+						require_once('views/panel.phtml');
+					?>
+				</div>
+
+				<div class="row">
+					<div class="span8" style="background:;">
+						<div class="well">
+							<center>
+								<H2>Misión </H2>
+							</center>
+								<p align="justify">
+									Ser reconocidos como una empresa innovadora, que presta servicios en el área de Tecnologías de la Información y la Comunicación, destacando además por la formación y capacitación de nuestro personal y compromiso con el desarrollo del país
+								</p>
+								<br>
+
+							<center>
+								<h2> Visión </h2>
+							</center>
+								<p align="justify">
+									Generar la máxima satisfacción de nuestros clientes, suministrándole soluciones integrales de comunicación y garantizando su eficacia en el tiempo
+								</p>
+								<br>
+
+							<center>
+								<h2>Valores</h2>
+							</center>
+								<p align="justify">
+									<ul>
+										<li align="justify">Responsabilidad: Con nuestros clientes, personal, proveedores, comunidad y medio ambiente.</li>
+										<li align="justify">Innovación: Con los mejores productos y servicios.</li>
+				 						<li align="justify">Pasión: Disfrutando de lo que hacemos en nuestro día a día.</li>
+				 						<li align="justify">Esfuerzo Colectivo: Compartiendo la misma visión y misión siendo parte de la misma empresa.</li>
+				 						<li align="justify">Soñar: Ver más allá de las posibilidades actuales.</li>
+									</ul>
+								</p>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
+</body>
+
+</html>

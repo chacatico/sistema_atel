@@ -1,0 +1,38 @@
+Factura
+	idFactura
+	idComprador
+	idVendedor
+	Total
+	iva[12]
+	TotalIva
+	estadoFactura (enProceso, Cancelado, Pagado)
+
+	TI = Total * 0.iva
+	TotalIva = TI + Total
+
+
+grupos_usuarios
+	Administrador
+	personalAdmtvo
+	Estudiante
+	Profesores
+	Proveedores
+	clienteOcasional
+
+detalleFactura
+	idDetalleFact
+	idFactura
+	idProducto
+
+Parte1 Factura
+
+idComprador (Busqueda Por Nombre)
+idVendedor (Busqueda Por Nombre)
+enProceso
+
+Parte2 Factura
+editar(DatosdeFactura)
+ListaProductosCargados()
+idProductos (PorNombre / porCodigo)
+
+ProcesarPago()->GuardarFactura

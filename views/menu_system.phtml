@@ -1,0 +1,92 @@
+<div id="menu">
+<div class="navbar">
+	<div class="navbar-inner">
+		<div class="container" style="width: auto;">
+			<div class="brand">
+				SATEL
+			</div>
+			<ul class="nav pull-center">
+				<li class="divider-vertical"></li>
+				<li class="active">
+					<a href="?accion=home">Home</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<?php
+					if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 1)
+					{
+				?>
+				<li>
+					<a href="?accion=alumnos">Estudiantes</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=cursos1">Cursos</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=profesores">Profesores</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=personal">Personal</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=estadisticas">Estadísticas</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=almacen">Almacén</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=facturacion">Facturación</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=pagos">Pagos</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<?php
+					}
+				?>
+				<?php
+					if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 3)
+					{
+				?>
+				<li>
+					<a href="?accion=#">Pagos</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<?php
+				}
+				?>
+				<?php
+					if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 2)
+					{
+				?>
+				<li>
+					<a href="?accion=#">Notas</a>
+				</li>
+				<li class="divider-vertical"></li>
+				<?php
+				}
+				?>
+			</ul>
+			<ul class="nav pull-right">
+				<li class="divider-vertical"></li>
+				<li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user icon-white"></i>    <?php echo $_SESSION["usuario_nom"]; ?> <b class="caret"></b></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="#">Editar Cuenta</a></li>
+                      <li><a href="#">Algo más aquí</a></li>
+                      <li class="divider"></li>
+                      <li><a href="?accion=salir">Salir</a></li>
+                    </ul>
+                 </li>
+                 <li class="divider-vertical"></li>
+			</ul>
+		</div>
+	</div>
+</div>
+</div>

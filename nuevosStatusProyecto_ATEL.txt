@@ -1,0 +1,53 @@
+Almacen-------->
+
+	Productos
+		idProducto
+		NombreProducto
+		Descripcion
+		Costo
+		PVP
+		cantidad
+		codigo
+		Categoría
+
+	Categorias
+		idCategoria
+		NombreCategoria
+		DescripcionCategoŕia
+
+Ventas
+	
+	Facturas
+		idFactura
+		idCliente
+		Fecha
+		MontoTotal
+
+	DetalleFatura
+		idDetalleFactura
+		idFactura
+		idProducto
+		cantidadProducto
+
+Pagos-> Estudaintes
+	
+	Preguntar por esta parte
+	___________________
+	Pagos(1)
+		idPago
+		idUsuario
+				   |----Presencial----|--------Online----------|
+		TipoPago = Debito / Efectivo / Deposito / Transferencia
+		CodigoDeposito / CodigoTransferencia
+		EstadoPagado
+
+		MontoPagado
+	______________________
+	
+	estadosPagos
+		Hecho
+		Por Verificaar
+		Enviado
+
+
+

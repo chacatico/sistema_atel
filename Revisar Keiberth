@@ -1,0 +1,5 @@
+Revisar Keiberth
+
+El select de los vendedores no muestra luego de hacer la busqueda del cliente, por lo mismo se envia vacio el formulario y no muestra los datos en el siguiente paso de factura para cargar los productos.
+
+El modal de cargar los producto al asignarlos tiene problemas no envia a la vista bien queda como ejecuntandose, le das hacia atras y ahi muestra bien el producto cargado, Ya está mostrando el monto total por la cantidad de productos de cada uno, faltaria sacar la operacion del Iva y el monto total de toda la factura q eso se hace despues, revisa eso ah y en la vista principal de factura que se muestren las facturas, cmo hacemos con los alumnos y profesores etc etc, que ya eso sabes como es bro.
