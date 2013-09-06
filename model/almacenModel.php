@@ -195,9 +195,9 @@ Class almacen extends Conectar
 		$res=mysql_query($query,parent::con());
 		while ($reg=mysql_fetch_assoc($res))
 		{
-			$this->factura[]=$reg;
+			$this->producto[]=$reg;
 		}
-			return $this->factura;
+			return $this->producto;
 	}
 
 // Fin Módulo Factura
