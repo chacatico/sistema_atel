@@ -13,7 +13,7 @@ class Conectar
     
     public static function ruta()
     {
-        return "http://localhost/proyecto_atel/";
+        return "http://localhost/sistema_atel/";
     }
 
     public function comillas_inteligentes($valor)
