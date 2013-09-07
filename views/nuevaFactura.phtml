@@ -39,35 +39,45 @@
 				<h3>Datos Cliente</h3>
 			</center>
 			<hr>
-			<form name="buscar_cliente" id="buscar_cliente" method="post" action="?accion=busca_cliente" class="form-horizontal">
-				<table>
-					<tr>
-						<td>Cliente: 
-							<div class="input-append">
-								<input type="text" class="span2" name="cedula" id="appendedPrependedInput">
-								<input type="submit" class="btn btn-primary" value="buscar">
-								<a href="?accion=#myModal" role="button" data-toggle="modal" class="btn btn-primary">Nuevo</a> 
-							</div>
-						</td>
-					</tr>
-				</table>
-			</form>
+			<center>
+				<form name="buscar_cliente" id="buscar_cliente" method="post" action="?accion=busca_cliente" class="form-horizontal">
+					<table>
+						<tr>
+							<td>C.I: 
+								<div class="input-append">
+									<input type="text" class="span2" name="cedula" id="appendedPrependedInput">
+									<input type="submit" class="btn btn-primary" value="buscar">
+									<a href="?accion=#myModal" role="button" data-toggle="modal" class="btn btn-primary">Nuevo</a> 
+								</div>
+							</td>
+						</tr>
+					</table>
+				</form>
+			</center>
 
 			<form name="newFactura_paso1" method="post" id="newFactura" action="?accion=nuevaFactura" class="form-horizontal">
 				<center>
-				<table border="0">
+				<table border="1">
 					<tr align="right">
-						<td colspan="4">Fecha: <input type="date" name="fecha" class="input-medium"></td>
+						<td colspan="3"><input type="hidden" name="fecha" class="input-medium" value="<?php echo date("d-m-Y") ?>"></td>
 					</tr>
 					<tr>
 						<td>
-							<input type="text" name="id_cliente" value="<?php echo $cliente[0]["id_cliente"]; ?>">
+							<input type="hidden" name="id_cliente" value="<?php echo $cliente[0]["id_cliente"]; ?>" />
+							Nombre: <input type="text" name="nombre" value="<?php echo $cliente[0]["nombreCliente"]; ?>" disabled/>
+						</td>
+						<td>
+							Apellido: <input type="text" name="apellido" value="<?php echo $cliente[0]["apellido"];?>" disabled/>
+						</td>
+						<td>
+							C.I: <input type="text" name="cedula" value="<?php echo $cliente[0]["cedula"];?>" disabled/>
 						</td>
 					</tr>
 
-					<tr align="right">
-						<td colspan="2">Vendedor: </td>
-						<td><select name="vendedor">
+					<tr align="center">
+						<td colspan="3">
+							Vendedor: 
+							<!-- <select name="vendedor">
 								<option value="0" selected>Seleccione</option>
 								<?php
 								for ($i=0; $i<sizeof($vendedor) ; $i++) 
@@ -81,13 +91,19 @@
 								<?php
 								}
 								?>
-							</select>
-							<input type="hidden" name="estado" value="enProceso">
-							<input type="hidden" name="grabar" value="si">
+							</select> -->
+							<?php 
+							$conversion = ucwords($_SESSION["usuario_nom"]);
+							?>
+							<input type="text" name="nomb_vendedor" value="<?php echo $conversion;?>" class="imput-medium"/>
+							<input type="text" name="vendedor" value="<?php echo $_SESSION["usuario_id"]; ?>" />
 						</td>
+						
 					</tr>
 					<tr align="center">
-						<td colspan="5">
+						<td colspan="3">
+							<input type="hidden" name="estado" value="enProceso">
+							<input type="hidden" name="grabar" value="si">
 							<input type="submit"  class="btn btn-primary">
 							<button type="reset" class="btn btn-primary">Limpiar</button>
 						</td>
