@@ -119,7 +119,7 @@ Class almacen extends Conectar
 		(
 		"
 		select 
-		p.nombre, 
+		p.login, 
 		c.id_cliente, 
 		c.nombreCliente, 
 		c.apellido, 
@@ -129,11 +129,11 @@ Class almacen extends Conectar
 		c.direccion, 
 		f.fecha 
 		from 
-		personas as p, 
+		usuarios as p, 
 		clientes as c, 
 		facturas as f 
 		where 
-		p.id_persona = f.idVendedor  and 
+		p.id_usuario = f.idVendedor  and 
 		c.id_cliente = f.id_cliente and 
 		f.id_factura = %s",
 		parent::comillas_inteligentes($id)
@@ -187,6 +187,7 @@ Class almacen extends Conectar
 			f.id_factura = ".$id." and 
 			d.id_factura = f.id_factura and
 			d.id_producto = p.id_producto
+			order by d.id_detallefactura asc
 			",
 			parent::comillas_inteligentes($id)
 			);

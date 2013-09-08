@@ -44,8 +44,9 @@
 					</div>
 					
 					<div class="span5 well">
-						<h4>Fecha: <?php echo $datos[0]["fecha"];?><br>
-							Vendedor: <?php echo $datos[0]["nombre"]?></h4>
+						<h4>Fecha: <?php $fecha_nueva = Conectar::voltear_fecha($datos["0"]['fecha']);
+							echo $fecha_nueva; ?><br>
+							Vendedor: <?php echo $datos[0]["login"]?></h4>
 					</div>
 
 					<div class="span10 well form-horizontal">
@@ -72,18 +73,34 @@
 									<th><?php echo $productos[$i]["nombre_producto"];?></th>
 									<th><?php echo $productos[$i]["pvp"];?></th>
 									<th><?php 
+
 										$cantidad = $productos[$i]["cantidad_producto"];
 										$pvp = $productos[$i]["pvp"];
 										$multiplicacion = $cantidad*$pvp;
-										echo $multiplicacion;?>
+										echo $multiplicacion;
+										$total = $multiplicacion;
+
+										// $sumatoria = $multiplicacion[$i]+=$multiplicacion;
+
+										?>
 									</th>
-									
+								
 									<th><a href="?accion=#">Quitar</a></th>
 								</tr>
 								<?php
 								} 
 								?>
+
 							</tbody>
+
+							<tr align="right">
+								<td colspan="3"></td>
+								<td><b>Monto Total</b></td>
+							</tr>
+							<tr align="right">
+								<td colspan="3"></td>
+								<td></td>
+							</tr>
 						</table>
 						<div>
 						</div>

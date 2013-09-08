@@ -57,20 +57,20 @@
 
 			<form name="newFactura_paso1" method="post" id="newFactura" action="?accion=nuevaFactura" class="form-horizontal">
 				<center>
-				<table border="1">
+				<table border="0" width="50%">
 					<tr align="right">
-						<td colspan="3"><input type="hidden" name="fecha" class="input-medium" value="<?php echo date("d-m-Y") ?>"></td>
+						<td colspan="3"><input type="hidden" name="fecha" class="input-medium" value="<?php echo date("Y-m-d") ?>"></td>
 					</tr>
 					<tr>
 						<td>
 							<input type="hidden" name="id_cliente" value="<?php echo $cliente[0]["id_cliente"]; ?>" />
-							Nombre: <input type="text" name="nombre" value="<?php echo $cliente[0]["nombreCliente"]; ?>" disabled/>
+							Nombre: <b><?php echo $cliente[0]["nombreCliente"]; ?></b>
 						</td>
 						<td>
-							Apellido: <input type="text" name="apellido" value="<?php echo $cliente[0]["apellido"];?>" disabled/>
+							Apellido: <b><?php echo $cliente[0]["apellido"]; ?></b>
 						</td>
 						<td>
-							C.I: <input type="text" name="cedula" value="<?php echo $cliente[0]["cedula"];?>" disabled/>
+							C.I: <b><?php echo $cliente[0]["cedula"] ?></b>
 						</td>
 					</tr>
 
@@ -95,8 +95,8 @@
 							<?php 
 							$conversion = ucwords($_SESSION["usuario_nom"]);
 							?>
-							<input type="text" name="nomb_vendedor" value="<?php echo $conversion;?>" class="imput-medium"/>
-							<input type="text" name="vendedor" value="<?php echo $_SESSION["usuario_id"]; ?>" />
+							<b><?php echo $conversion ?></b>
+							<input type="hidden" name="vendedor" value="<?php echo $_SESSION["usuario_id"]; ?>" />
 						</td>
 						
 					</tr>
