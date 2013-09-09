@@ -41,20 +41,34 @@
 			</article>
 
 			<article class="well-fluid">
-				<table class="table table-striped table-bordered table-condensed">
-					<thead>
-						<tr>
-							<th>Fecha</th>
-							<th>Cliente</th>
-							<th>Apellido</th>
-							<th>Monto</th>
-							<th collspan="3">Acciones</th>
-						</tr>
-					</thead>
-					<tbody>
-
-					</tbody>
-				</table>
+				<div id="facturas">
+					<div class="well">
+						<table width="100%" border="0">
+							<tr>
+								<td align="center"><b>Fecha</b></td>
+								<td align="center"><b>Nombre Cliente</b></td>
+								<td align="right"><b>Monto</b></td>
+								<td align="center"><b>Estado de Factura</b></td>
+							</tr>
+						</table>
+					</div>
+					<?php for ($i=0; $i<sizeof($facturas) ; $i++) { 
+						$fecha_nueva = Conectar::voltear_fecha($facturas[$i]['fecha']);
+					?>
+					<div class="well">
+						<table width="100%" border="0">
+							<tr>
+								<td width="14%" align="center"><?php echo $fecha_nueva;?></td>
+								<td width="34%" align="center"><?php echo $facturas[$i]["nombreCliente"];?></td>
+								<td width="13%" align="right"><?php echo $facturas[$i]["monto_total"];?></td>
+								<td align="center"><?php echo $facturas[$i]["estadoFactura"];?></td>
+							</tr>
+						</table>
+					</div>
+					<?php
+					}
+					?>
+				</div>
 			</article>
 		</div>
 			

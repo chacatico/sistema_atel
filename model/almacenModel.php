@@ -84,6 +84,52 @@ Class almacen extends Conectar
 // Fin Módulo Producto
 
 // Comienzo de módulo de factura
+	public function get_contar_facturas()
+	{
+		$sql=
+		"
+		select 
+		c.nombreCliente,
+		f.id_factura,
+		f.fecha,
+		f.monto_total, 
+		f.estadoFactura 
+		from 
+		clientes as c, 
+		facturas as f 
+		where 
+		f.id_cliente = c.id_cliente;
+		";
+		$res=mysql_query($sql,parent::con());
+		$total_registros=mysql_num_rows($res);
+
+		return $total_registros;
+	}
+
+	public function get_paginacion_facturas()
+	{
+		$sql=
+		"
+		select 
+		c.nombreCliente,
+		f.id_factura,
+		f.fecha,
+		f.monto_total, 
+		f.estadoFactura 
+		from 
+		clientes as c, 
+		facturas as f 
+		where 
+		f.id_cliente = c.id_cliente;
+		";
+		$res=mysql_query($sql,parent::con());
+		while ($reg=mysql_fetch_assoc($res))
+		{
+			$this->factura[]=$reg;
+		}
+			return $this->factura;
+	}
+
 	public function registrar_factura()
 	{
 		// print_r($_POST);
