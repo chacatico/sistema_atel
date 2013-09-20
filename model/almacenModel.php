@@ -158,6 +158,36 @@ Class almacen extends Conectar
         exit();
 	}
 
+	public function finalizar_factura($id)
+	{
+		parent::con();
+		// print_r($_POST);
+		$sql=sprintf
+		("
+			update 
+			facturas
+			set
+			monto_total = %s,
+			iva = %s,
+			totalIva = %s,
+			estadoFactura = %s
+			where 
+			id_factura = %s",
+			parent::comillas_inteligentes($_POST["monto_total"]),
+			parent::comillas_inteligentes($_POST["iva"]),
+			parent::comillas_inteligentes($_POST["monto"]),
+			parent::comillas_inteligentes($_POST["estado"]),
+			parent::comillas_inteligentes($id)
+			);
+		// echo $sql;
+		// exit();
+		mysql_query($sql);
+		echo utf8_decode("<script type='text/javascript'>
+        alert('Factura finalizada.');
+        window.location='?accion=facturacion';
+        </script>");
+	}
+
 	public function get_datos_factura($id)
 	{
 		parent::con();
@@ -173,7 +203,8 @@ Class almacen extends Conectar
 		c.telefono, 
 		c.correo, 
 		c.direccion, 
-		f.fecha 
+		f.fecha,
+		f.estadoFactura 
 		from 
 		usuarios as p, 
 		clientes as c, 

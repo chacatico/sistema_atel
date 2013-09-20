@@ -119,9 +119,16 @@
 								<td><?php echo $totalFinal; ?></td>
 							</tr>
 						</table>
+						<form name="datos_factura" method="post" action="">
+							<input type="hidden" name="monto_total" value="<?php echo $sumatoria; ?>">
+							<input type="hidden" name="monto" value="<?php echo $totalFinal; ?>">
+							<input type="hidden" name="iva" value="<?php echo $iva; ?>">
+							<input type="hidden" name="estado" value="Pendiente"><br>
+							<input type="hidden" name="finalizar" value="si"><br>
 						<center>
-							<button class="btn btn-primary">Finalizar</button>
+							<input type="submit" class="btn btn-primary" value="Finalizar">
 						</center>
+						</form>
 						<div>
 						</div>
 					</div>

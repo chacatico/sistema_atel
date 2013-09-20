@@ -5,8 +5,11 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 	$fact = new almacen;
 	$id = $_GET["id"];
 
-	if (isset($_POST["grabar"])) {
-		$fact->registro_completo_factura();
+	// if (isset($_POST["grabar"])) {
+	// 	$fact->registro_completo_factura();
+	// }
+	if (isset($_POST["finalizar"])){
+		$fact->finalizar_factura($id);
 	}
 		$datos = $fact->get_datos_factura($id);
 		$productos = $fact->detalle_factura($id);
