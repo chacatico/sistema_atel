@@ -65,8 +65,14 @@
 								</tr>
 							</thead>
 							<tbody>
-								<?php for ($i=0; $i<sizeof($productos); $i++) 
+								<?php 
+									// echo $productos["pvp"];
+
+									for ($i=0; $i<sizeof($productos); $i++) 
 								{
+										$cantidad = $productos[$i]["cantidad_producto"];
+										$pvp = $productos[$i]["pvp"];
+										$multiplicacion = $cantidad*$pvp;
 								?>
 								<tr>
 									<th><?php echo $productos[$i]["cantidad_producto"];?></th>
@@ -74,32 +80,48 @@
 									<th><?php echo $productos[$i]["pvp"];?></th>
 									<th><?php 
 
-										$cantidad = $productos[$i]["cantidad_producto"];
-										$pvp = $productos[$i]["pvp"];
-										$multiplicacion = $cantidad*$pvp;
 										echo $multiplicacion;
-										$total = $multiplicacion;
-
 										?>
 									</th>
 								
 									<th><a href="?accion=#">Quitar</a></th>
 								</tr>
-								<?php
-								} 
-								?>
 
+								<?php
+								$prueba= $productos[$i]["cantidad_producto"]*$productos[$i]["pvp"];
+								// print_r($prueba);
+								$variable = array($prueba);
+
+								 	for ($j=0; $j<count($variable) ; $j++) { 
+									$sumatoria = $sumatoria + $variable[$j];
+									}
+								}
+									// echo $sumatoria;
+								$iva = 0.12;
+								$ivaFinal = $sumatoria * $iva;
+								$totalFinal = $sumatoria + $ivaFinal;
+								?>
 							</tbody>
 
 							<tr align="right">
 								<td colspan="3"></td>
 								<td><b>Monto Total</b></td>
+								<td><?php echo $sumatoria; ?></td>
 							</tr>
 							<tr align="right">
 								<td colspan="3"></td>
-								<td></td>
+								<td><b>IVA</b></td>
+								<td><?php echo substr($iva."%", 2); ?></td>
+							</tr>
+							<tr align="right">
+								<td colspan="3"></td>
+								<td><b>Total a Pagar</b></td>
+								<td><?php echo $totalFinal; ?></td>
 							</tr>
 						</table>
+						<center>
+							<button class="btn btn-primary">Finalizar</button>
+						</center>
 						<div>
 						</div>
 					</div>
