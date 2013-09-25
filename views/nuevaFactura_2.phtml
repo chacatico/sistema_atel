@@ -66,10 +66,7 @@
 							</thead>
 							<tbody>
 								<?php 
-									// echo $productos["pvp"];
-
-									for ($i=0; $i<sizeof($productos); $i++) 
-								{
+									for ($i=0; $i<sizeof($productos); $i++) {
 										$cantidad = $productos[$i]["cantidad_producto"];
 										$pvp = $productos[$i]["pvp"];
 										$multiplicacion = $cantidad*$pvp;
@@ -78,13 +75,8 @@
 									<th><?php echo $productos[$i]["cantidad_producto"];?></th>
 									<th><?php echo $productos[$i]["nombre_producto"];?></th>
 									<th><?php echo $productos[$i]["pvp"];?></th>
-									<th><?php 
-
-										echo $multiplicacion;
-										?>
-									</th>
-								
-									<th><a href="?accion=#">Quitar</a></th>
+									<th><?php echo $multiplicacion; ?></th>
+									<th><a href="?accion=?accion=#">Suprimir</a></th>
 								</tr>
 
 								<?php
@@ -141,8 +133,8 @@
 	<!-- Modal agregar producto -->
 	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 		<div class="modal-header" style="background:#262626; color:#f2f2f2;">
-		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-		    <h3 id="myModalLabel">Agregar Producto</h3>
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		 	<h3 id="myModalLabel">Agregar Producto</h3>
 		</div>
 
 	 	<div class="modal-body">
@@ -160,9 +152,7 @@
 	<!-- Fin Modal Agregar producto -->
 
 	<footer id="footer_system">
-		<?php 
-			require_once('views/footer_system.phtml');
-		?>
+		<?php require_once('views/footer_system.phtml'); ?>
 	</footer>
 
 	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
