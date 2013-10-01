@@ -53,9 +53,10 @@
 
 #footer_system{
   position: relative;
-  margin-top: 350px;
-  margin-bottom: 0px;
+  /*margin-top: 350px;*/
+  bottom: 0px;
   clear:both;
+  /*position: fixed;*/
   width: 100%;
   background: #1E1E20;
   color: #0092B2;

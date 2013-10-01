@@ -15,7 +15,7 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 		$productos = $fact->detalle_factura($id);
 		require_once("views/nuevaFactura_2.phtml");
 }else{
-	header("Location: ".Conectar::con()."?accion=home");
+	header("Location: ".Conectar::ruta()."?accion=home");
 	exit();
 }
 ?>

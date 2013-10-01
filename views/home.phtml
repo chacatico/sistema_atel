@@ -39,19 +39,17 @@
 							?>	
 								Administrador: 
 							<?php
-							}else{
+							}
 								if ($_SESSION['usuario_lvl'] == '2') {
 							?>
 								Profesor: 
 							<?php
-								}else{
+								}
 									if ($_SESSION['usuario_lvl'] == '3') {
 									?>
 									Estudiante: 
 									<?php
 									}
-								}
-							}
 							?>
 						 <a href="#"><?php echo $_SESSION['usuario_nom'];?></a>	
 						</h3>
@@ -76,7 +74,8 @@
 			<br><br>	
 			<hr>
 		</div>
-				
+		<?php if (isset($_SESSION["usuario_lvl"]) and $_SESSION["usuario_lvl"] == 1 ) {
+		?>
 		<div class="span7 offset1" style="background:;">
 			<div class="well">
 				<center><h3>Accesos Rápido</h3></center><br>
@@ -153,6 +152,14 @@
 	  	</div>
 	</div>
 	<!-- Fin Modal Agregar Noticia -->
+		<?php	
+		}else{
+			?>
+			<h2>En Construcción</h2>
+			<?php
+		}		
+		?>
+		
 
 	<footer id="footer_system">
 		<?php 

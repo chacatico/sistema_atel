@@ -1,3 +1,4 @@
+<!DOCTYPE HTML>
 <?
 // print_r($_SESSION);
 //     exit();
@@ -27,15 +28,57 @@
 		?>
 	</div>
 
-	<section id="contenido_system">
-		
-			
-			
-
+	<section id="contenido_system" style="height:600px;">
+		<center>
+			<h2>Usuarios</h2>
+		</center>
+		<hr>
+			<div class="well span12 offset2">
+				<a href="?accion=#myModal" class="btn btn-primary" role="button" data-toggle="modal">Crear Usuario</a>
+			</div>
+			<div class="well-fluid span10 offset3">
+			<center>
+				<table class="table table-striped table-bordered table-condensed">
+					<thead>
+						<th>Usuario</th>
+						<th>Nombre</th>
+						<th>Oficio</th>
+						<th colspan="3">Acciones</th>
+					</thead>
+					<tbody>
+						<?php for ($i=0; $i<sizeof($users); $i++) { 
+						?>
+						<td><?php echo $users[$i]["login"];?></td>
+						<td><?php echo $users[$i]["nombre"];?></td>
+						<td><?php echo $users[$i]["oficio"];?></td>
+						<?php
+						}?>
+					</tbody>
+				</table>
+			</center>
+			</div>
 	</section>
 
+	<!-- Modal agregar usuario -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header" style="background:#262626; color:#f2f2f2;">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Nuevo Usuario</h3>
+		</div>
 
-	<footer>
+	 	<div class="modal-body">
+		    <p>
+		    	<?php	require_once("controller/new_userController.php"); 	?>
+		    </p>
+	  	</div>
+
+	  	<div class="modal-footer" style="background:#262626;">
+	    	<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	  	</div>
+	</div>
+	<!-- Fin Modal Agregar Usuario -->
+
+	<footer id="footer_system">
 		<?php 
 			require_once('views/footer_system.phtml');
 		?>

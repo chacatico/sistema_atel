@@ -47,26 +47,24 @@
 					<a href="?accion=pagos">Pagos</a>
 				</li>
 				<li class="divider-vertical"></li>
+				<li>
+					<a href="?accion=usuarios">Usuarios</a>
+				</li>
+				<li class="divider-vertical"></li>
 				<?php
 					}
-				?>
-				<?php
-					if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 3)
-					{
+						if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 3)	{
 				?>
 				<li>
 					<a href="?accion=#">Pagos</a>
 				</li>
 				<li class="divider-vertical"></li>
 				<?php
-				}
-				?>
-				<?php
-					if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 2)
-					{
+					}
+						if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 2)	{
 				?>
 				<li>
-					<a href="?accion=#">Notas</a>
+					<a href="?accion=notas">Notas</a>
 				</li>
 				<li class="divider-vertical"></li>
 				<?php

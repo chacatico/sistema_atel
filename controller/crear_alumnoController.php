@@ -3,11 +3,10 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 {
 	require_once("model/PersonasModel.php");
 	$pers=new personas;
-	if (isset($_POST["grabar"]))
-	{
+
+	if (isset($_POST["grabar"]) and $_POST["grabar"] == "registro_alumno")	{
 		$pers->crear_alumno();
-	}else
-	{
+	}else{
 		$estado = $pers->get_estados();
 		// print_r($estado);
 		// print_r($profesion);

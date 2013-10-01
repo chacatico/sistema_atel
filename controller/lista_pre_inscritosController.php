@@ -10,7 +10,7 @@ if (isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"]!="")
 		require_once('views/lista_pre_inscritos.phtml');
 }else
 {
-	header("Location: ".Conectar::con()."?accion=home");
+	header("Location: ".Conectar::ruta()."?accion=home");
 	exit();
 }
 ?>

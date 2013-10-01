@@ -16,7 +16,7 @@ if (isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSI
 	}
 		require_once("views/nuevaFactura.phtml");
 }else{
-	header("Location: ".Conectar::con()."?accion=home");
+	header("Location: ".Conectar::ruta()."?accion=home");
 	exit();
 }
 ?>

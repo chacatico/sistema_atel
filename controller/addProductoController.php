@@ -18,7 +18,7 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 	}
 
 }else{
-	header("Location: ".Conectar::con()."?accion=home");
+	header("Location: ".Conectar::ruta()."?accion=home");
 	exit();
 }
 ?>

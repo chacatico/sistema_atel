@@ -11,7 +11,7 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 
 	require_once("views/agregar_categoria.phtml");
 }else{
-	header("Location: ".Conectar::con()."?accio=home");
+	header("Location: ".Conectar::ruta()."?accio=home");
 	exit();
 }
 ?>

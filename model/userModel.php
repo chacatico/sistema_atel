@@ -65,7 +65,7 @@ class usuarios extends Conectar
             isset($_POST["pass"]) and $_POST["pass"] == "" or
             isset($_POST["nivel"]) and $_POST["nivel"] == "0")
         {
-            header("Location: ".Conectar::ruta()."?accion=crear_usuario&e=1");exit();
+            header("Location: ".Conectar::ruta()."?accion=nuevo_usuario&e=1");exit();
         }else
         {
             

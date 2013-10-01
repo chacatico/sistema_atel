@@ -12,7 +12,7 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 		require_once("views/agregar_noticia.phtml");
 	}
 }else{
-	header("Location: ".Conectar::con()."?accion=home");
+	header("Location: ".Conectar::ruta()."?accion=home");
 	exit();
 }
 ?>
