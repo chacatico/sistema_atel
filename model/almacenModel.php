@@ -106,7 +106,7 @@ Class almacen extends Conectar
 		return $total_registros;
 	}
 
-	public function get_paginacion_facturas()
+	public function get_paginacion_facturas($inicio, $limite)
 	{
 		$sql=
 		"
@@ -120,8 +120,10 @@ Class almacen extends Conectar
 		clientes as c, 
 		facturas as f 
 		where 
-		f.id_cliente = c.id_cliente;
-		";
+		f.id_cliente = c.id_cliente
+		order by f.fecha desc
+		limit " . $inicio . "," . $limite;
+		
 		$res=mysql_query($sql,parent::con());
 		while ($reg=mysql_fetch_assoc($res))
 		{

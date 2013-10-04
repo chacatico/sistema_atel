@@ -1190,9 +1190,9 @@ Class personas extends Conectar
         $res=mysql_query($sent,parent::con());
         while ($reg=mysql_fetch_assoc($res))
         {
-            $this->persona[]=$reg;
+            $this->estudiante[]=$reg;
         }
-            return $this->persona;
+            return $this->estudiante;
     }
 
     // Módulo Cliente

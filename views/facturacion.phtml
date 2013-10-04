@@ -69,6 +69,54 @@
 					}
 					?>
 				</div>
+				<article id="paginador">
+							<center>
+								<?php
+									if ($inicio > 0) 
+									{
+										//echo "hola";
+										$var=$pagina;
+										$var--;
+										echo "<a href=".Conectar::url()."&pagina=". $var ."><img src="."public/img/icon/Left.png"."></a>";
+									}else
+									{
+										// echo "<i class="."icon-chevron-left"."></i>";
+										echo "<img src="."public/img/icon/Left.png".">";
+									}
+									if ($total_paginas > 1)
+									 {
+										for ($i=1;$i<=$total_paginas;$i++)
+										{
+											if ($pagina == $i) 
+											{
+												//si muestro el indice de la pagina actual, no coloco enlace
+												echo $pagina . " ";
+											}else
+											{
+												//si el indice no corresponde con la pagina mostrada actualmente, coloco el enlace para ir a esa pagina
+												echo "<a href=".Conectar::url()."&pagina=" . $i . "&criterio=" . $txt_criterio . "'>" . $i . "</a>";
+											}
+										}
+									}
+									//echo $inicio;
+									if ($pagina == $total_paginas)
+									 {
+										// echo "<i class="."icon-chevron-right"."></i>";
+										echo "<img src="."public/img/icon/Right.png".">";
+									}else
+									{
+										$var=$pagina;
+										$var++;
+										echo "<a href=".Conectar::url()."&pagina=". $var . "><img src="."public/img/icon/Right.png"."></a>";		
+									}
+									?>
+									
+										<?php
+											echo "Total Registros Econtrados:(".$total_paginas;
+											echo ") || Total Páginas Existentes:(".$total_paginas.")<br>";
+									?>
+									</center>
+							</article>
 			</article>
 		</div>
 			
