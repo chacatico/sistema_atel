@@ -40,12 +40,12 @@
 			</center>
 			<hr>
 			<center>
-				<form name="buscar_cliente" id="buscar_cliente" method="post" action="?accion=busca_cliente" class="form-horizontal">
+				<form name="buscar_cliente" id="buscar_cliente" method="post" action="?accion=busca_cliente" class="form-horizontal" autocomplete="off">
 					<table>
 						<tr>
 							<td>C.I: 
 								<div class="input-append">
-									<input type="text" class="span2" name="cedula" id="appendedPrependedInput">
+									<input type="text" class="span2" name="cedula" id="appendedPrependedInput" required="required" title="Ingrese una cédula" pattern="[0-9]+" maxlength="8" autocomplete="off" />
 									<input type="submit" class="btn btn-primary" value="buscar">
 									<a href="?accion=#myModal" role="button" data-toggle="modal" class="btn btn-primary">Nuevo</a> 
 								</div>
@@ -104,8 +104,7 @@
 						<td colspan="3">
 							<input type="hidden" name="estado" value="enProceso">
 							<input type="hidden" name="grabar" value="si">
-							<input type="submit"  class="btn btn-primary">
-							<button type="reset" class="btn btn-primary">Limpiar</button>
+							<input type="submit"  class="btn btn-primary" value="Siguiente">
 						</td>
 					</tr>
 				</table>
