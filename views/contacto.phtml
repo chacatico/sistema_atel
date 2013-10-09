@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
@@ -114,4 +115,122 @@
 	<script src="<?php echo Conectar::ruta();?>public/js/funciones.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+	<section id="menu">
+		<div class="span12 offset2" id="contenido" style="background:;">
+			<?php 
+			require_once('menu.phtml');
+			?>
+			
+			<div>
+				<?php
+					require_once('views/panel.phtml');
+				?>
+			</div>
+
+			<div class="row">
+				<div class="span8">
+					<div id="contacto" class="well">
+						<h2 align="center">Contactanos</h2>
+						<hr>
+
+						<form name="contacto" id="contacto" method="post" class="well">
+							<table border="0" align="center">
+								<tr>
+									<td>Nombre: </td>
+									<td ><input type="text" name="nombre" /></td>
+								</tr>
+								<tr>
+									<td>Apellido: </td>
+									<td><input type="text" name="apellido" /></td>
+								</tr>
+								<tr>
+									<td>Empresa: </td>
+									<td><input type="text" name="empresa" /></td>
+								</tr>
+								<tr>
+									<td>Correo: </td>
+									<td><input type="text" name="correo" placeholder="alguien@correo.com" /></td>
+									
+								</tr>
+								<tr>
+									<td>Servicio: </td>
+									<td>
+										<select type="select" name="servicio" class="input-medium"/>
+										<option>Seleccione</option>
+										<option>Cursos</option>
+										<option>Desarrollo</option>
+										<option>Redes</option>
+										<option>Otro</option>
+										</select>
+									</td>
+								</tr>
+							</table>
+							<table align="center">
+								<tr>
+									<td colspan="2">
+												<textarea name="comentario" class="estilotextarea" placeholder="Su Mensaje"></textarea>
+											</td>
+								</tr>
+								<tr>
+									<td colspan="2" align="center">
+										<button type="submit" class="btn btn-primary">Enviar</button>
+										<button type="reset" class="btn btn-primary">Limpiar</button>
+									</td>
+								</tr>
+							</table>
+						</form>
+						<hr>
+						<div id="map" class="">
+							<h2>Nuestra Ubicación</h2>
+							<!-- <img src="public/img/maps.png" width="570px" height="800px"> -->
+							<iframe width="550" height="450" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.co.ve/maps?f=q&amp;source=s_q&amp;hl=es&amp;geocode=&amp;q=residencias+venaragua&amp;aq=&amp;sll=10.267184,-67.60541&amp;sspn=0.191547,0.338173&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Residencias+Venaragua,+Calle+L%C3%B3pez+Aveledo,+Barrio+La+Democracia,+Maracay,+Girardot,+Aragua&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><!-- <a href="https://maps.google.co.ve/maps?f=q&amp;source=embed&amp;hl=es&amp;geocode=&amp;q=residencias+venaragua&amp;aq=&amp;sll=10.267184,-67.60541&amp;sspn=0.191547,0.338173&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Residencias+Venaragua,+Calle+L%C3%B3pez+Aveledo,+Barrio+La+Democracia,+Maracay,+Girardot,+Aragua&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">Ver mapa más grande</a> --></small>
+						</div>
+
+					</div>
+				</div>
+			</div>
+			
+			
+			
+		</div>
+	</section>
+	</div>
+
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+	<script src="<?php echo Conectar::ruta(); ?>public/js/bootstrap-collapse.js"></script>
+	<script src="<?php echo Conectar::ruta(); ?>public/js/jquery.js"></script>
+	<script src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
+	<script src="<?php echo Conectar::ruta();?>public/js/funciones.js"></script>
+</body>
+
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

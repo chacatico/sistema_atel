@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <html>
 	<head></head>
 	<body>
@@ -15,3 +16,22 @@
 </ul>
 	</body>
 </html>
+=======
+<html>
+	<head></head>
+	<body>
+		<ul>
+	<?php 
+		for ($i=0; $i<sizeof($pre_inscritos); $i++) { 
+	?>
+	<li>
+		<a href="?accion=detalle_pre_inscrito&id=<?php echo $pre_inscritos[$i]["id_preinscripcion"]; ?>"> <?php echo $pre_inscritos[$i]["nombre"];?></a>
+	</li>
+
+	<?php
+		}
+	?>
+</ul>
+	</body>
+</html>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624

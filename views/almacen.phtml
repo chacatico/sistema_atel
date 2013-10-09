@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <?
 // print_r($_SESSION);
@@ -100,4 +101,108 @@
     <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
 	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
 </body>
+=======
+<!DOCTYPE HTML>
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		<center>
+			<h2>Almacén</h2>
+			<hr>
+		</center>
+
+		
+			<div class="span4 offset1 well">
+				<center>
+					<h3>Accesos Diréctos</h3><br>
+				</center>
+				<div class="row-fluid" style="font-weight:bold; font-size:13px;">
+					<div class="span12">
+						<a href="?accion=#myModal" role="button" data-toggle="modal">Agregar Categoría de Productos</a>
+					</div>
+				</div>	
+				
+			</div>
+
+			<div class="span10 well">
+				<center>
+					<h3>Productos</h3> <br>
+				</center>
+
+				<div class="row-fluid" style="font-weight:bold; font-size:14px;">
+					<div class="span3">
+						<a href="?accion=#">Visualizar Listado</a>
+					</div>
+
+					<div class="span4">
+						<a href="?accion=agregar_producto">Agregar Nuevo Producto</a>
+					</div>
+				</div>
+			</div>
+		
+			
+			
+
+	</section>
+
+
+	<!-- Modal agregar Categoría -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header" style="background:#262626; color:#f2f2f2;">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Nueva Categoría</h3>
+		</div>
+
+	 	<div class="modal-body">
+		    <p>
+		    	<?php
+		    		require_once("controller/agregar_categoriaController.php");
+		    	?>
+		    </p>
+	  	</div>
+
+	  	<div class="modal-footer" style="background:#262626;">
+	    	<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	  	</div>
+	</div>
+	<!-- Fin Modal Agregar Categoría -->
+
+	<footer id="footer_system">
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

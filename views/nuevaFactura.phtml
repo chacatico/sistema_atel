@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE HTML>
 <?
 // print_r($_SESSION);
@@ -132,4 +133,140 @@
     <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
 	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
 </body>
+=======
+<!DOCTYPE HTML>
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		<center>
+			<h2>Nueva Factura</h2>
+			<hr>
+		</center>
+		
+		<div class="span12 offset2 well">
+			<center>
+				<h3>Datos Cliente</h3>
+			</center>
+			<hr>
+			<form name="buscar_cliente" id="buscar_cliente" method="post" action="?accion=busca_cliente" class="form-horizontal">
+				<table>
+					<tr>
+						<td>Cliente: 
+							<div class="input-append">
+								<input type="text" class="span2" name="cedula" id="appendedPrependedInput">
+								<input type="submit" class="btn btn-primary" value="buscar">
+								<a href="?accion=#myModal" role="button" data-toggle="modal" class="btn btn-primary">Nuevo</a> 
+							</div>
+						</td>
+					</tr>
+				</table>
+			</form>
+
+			<form name="newFactura_paso1" method="post" id="newFactura" action="?accion=nuevaFactura" class="form-horizontal">
+				<center>
+				<table border="0">
+					<tr align="right">
+						<td colspan="4">Fecha: <input type="date" name="fecha" class="input-medium"></td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" name="id_cliente" value="<?php echo $cliente[0]["id_cliente"]; ?>">
+						</td>
+					</tr>
+
+					<tr align="right">
+						<td colspan="2">Vendedor: </td>
+						<td><select name="vendedor">
+								<option value="0" selected>Seleccione</option>
+								<?php
+								for ($i=0; $i<sizeof($vendedor) ; $i++) 
+								{ 
+								?>
+
+								<option value="<?php echo $vendedor["$i"]["id_persona"];?>">
+									<?php echo $vendedor["$i"]["nombre"]; ?>
+								</option>
+
+								<?php
+								}
+								?>
+							</select>
+							<input type="hidden" name="estado" value="enProceso">
+							<input type="hidden" name="grabar" value="si">
+						</td>
+					</tr>
+					<tr align="center">
+						<td colspan="5">
+							<input type="submit"  class="btn btn-primary">
+							<button type="reset" class="btn btn-primary">Limpiar</button>
+						</td>
+					</tr>
+				</table>
+				</center>
+			</form>
+		</div>
+			
+
+	</section>
+
+	<!-- Modal Nuevo Cliente -->
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header" style="background:#262626; color:#f2f2f2;">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Nuevo Cliente</h3>
+		</div>
+
+	 	<div class="modal-body">
+		    <p>
+		    	<?php
+		    		require_once("controller/nuevo_clienteController.php");
+		    	?>
+		    </p>
+	  	</div>
+
+	  	<div class="modal-footer" style="background:#262626;">
+	    	<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	  	</div>
+	</div>
+	<!-- Fin Modal Nuevo Cliente -->
+
+
+	<footer id="footer_system">
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

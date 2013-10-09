@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body{
 	margin:0;
 }
@@ -25,4 +26,33 @@ body{
 	font-size: 2em;
 
 	padding: 1px;
+=======
+body{
+	margin:0;
+}
+
+#logo {
+	background-color: ;
+	height: 125px;
+}
+#menu ul li{
+	background-color:;
+	text-align: right;
+	display: inline;
+
+}
+
+
+#menu {
+	background-color:;
+	height: 125px;
+}
+
+#titulo {
+	color:white;
+	text-align: center;
+	font-size: 2em;
+
+	padding: 1px;
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 }

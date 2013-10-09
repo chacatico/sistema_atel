@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?
 // print_r($_SESSION);
 //     exit();
@@ -200,4 +201,208 @@
 	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
 	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
 </body>
+=======
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		<div style="width:100%;">
+				<center>
+					<h2>Editar Trabajador</h2>
+				</center>
+				<hr>
+		</div>
+		<center>
+		<div  style="width:100%; text-align:left;">
+			<section class="well" id="formulario">
+				<?php
+					if (isset($_GET["e"])) {
+						
+						echo $error."<br><br>";
+					}
+				?>
+					<form name="alumno" action="" method="post">
+						<div class="row">
+								<div class="row-fluid span12" style="background:;">
+									<div class="span6">
+										<fieldset>
+											<legend><center><h3>Datos Personales</h3></center></legend>
+											<center>
+												<table border="0" width="100%">
+													<tr>
+														<td align="right" width="20%">Cédula:</td>
+														<td width="25%">
+															<select name="nacionalidad" class="input-medium">
+																<option value="0" selected="selected">
+																	Seleccione...
+																</option>
+																<option value="V">
+																	V- Venezolano
+																</option>
+																<option value="E">
+																	E- Extranjero
+																</option>
+															</select>
+														</td>
+														<td width="10%">
+															<input type="text" name="cedula" class="input-small" maxlength="8" value="<?php echo $personal[0]['cedula']; ?>" placeholder="Ej: 00000000"/>
+														</td>
+													</tr>
+													<tr>
+														<td align="right">Nombre: </td>
+														<td>
+															<input class="input-medium" value="<? echo $personal[0]['nombre']; ?>" type="text" name="nombre"/>
+														</td>
+														<td align="right">Apellido: </td>
+														<td>
+															<input type="text" class="input-medium" name="apellido" value="<?php echo $personal [0]['apellido'];?>" />
+														</td>
+													</tr>
+													<tr>
+														<td align="right">F. Nacimiento: </td>
+														<td>
+															<input class="input-medium" type="text" id="fecha_nac" name="fecha_nac" value="<?php echo $personal [0]['fecha_de_nacimiento'];?>">
+														</td>
+														<td align="right">Sexo: </td>
+														<td><select name="sexo" class="input-medium">
+															<?php
+																if($personal[0]['sexo'] == "Femenino")
+																{
+															?>
+															
+															<option value="Femenino" selected="selected">
+																Femenino
+															</option>
+															<option value="Masculino">
+																Masculino
+															</option>
+															<?php
+															}else
+															{
+															?>
+															<option value="Femenino">
+																Femenino
+															</option>
+															<option value="Masculino" selected="selected">
+																Masculino
+															</option>
+															<?php
+															}
+															?>
+															</select>
+													    </td>
+													</tr>
+													<tr>
+														<td align="right">Celular: </td>
+														<td>
+															<input type="text" name="telf_personal" class="input-medium" value="<?php echo $personal [0]['telf_personal'];?>" />
+														</td>
+														<td align="right">Correo: </td>
+														<td>
+															<input type="text" class="input-medium" name="correo" value="<?php echo $personal [0]['correo'];?>" />
+														</td>
+													</tr>
+													<tr>
+														<td align="right">Profesión: </td>
+														<td>
+															<input type="text" class="input-medium" name="profesion" value="<?php echo $personal [0]['profesion'];?>" />
+														</td>
+													</tr>
+												</table>
+											</center>
+										</fieldset>
+									</div>
+
+									<div class="span6">
+										<fieldset>
+											<legend><center><h3>Datos Habitación</h3></center></legend>
+											<center>
+												<table border="0" width="100%">
+													<tr>
+														<td>Estado: </td>
+														<td><input type="text" name="estado" class="input-medium" value="<?php echo $personal[0]['estado']?>"/></td>
+														<td>Ciudad: </td>
+														<td><input type="text" name="ciudad" class="input-medium" value="<?php echo $personal[0]['ciudad']?>"/></td>
+													</tr>
+													<tr>
+														<td>Cod. Postal: </td>
+														<td><input type="text" class="input-small" name="cod_postal" value="<?php echo $personal[0]['cod_postal']?>"/></td>
+														<td>Dirección: </td>
+														<td><textarea name="direccion" style="resize:none;"><?php echo $personal[0]['direccion'];?></textarea></td>
+													</tr>
+													<tr>
+														<td>Teléfono: </td>
+														<td><input type="text" class="input-medium" name="telf_trabajo" value="<?php echo $personal[0]['telf_trabajo']?>"/></td>
+													</tr>
+												</table>
+											</center>
+										</fieldset>
+									</div>
+								</div>
+							</div>
+						<center>
+							<div>
+								<tr>
+									<td colspan="2" align="center">
+									
+									<input type="hidden" name="grupo" value="5"/>
+									<input type="hidden" name="id_personal" value="<?php echo $personal[0]["id_persona"];?>"/>
+									<input type="hidden" name="grabar" value="si"/>
+									<input type="submit" name="agregar" class="btn btn-info" value="Editar" onClick="editar_personal()"/>
+									<a class="btn btn-info"  href="?accion=personal">Volver</a>
+									</td>
+								</tr>
+							</div>
+						</center>
+							
+									
+					</form>
+			</section>
+
+		</div>
+		</center>
+			
+
+	</section>
+
+
+	<footer>
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

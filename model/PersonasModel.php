@@ -924,6 +924,10 @@ Class personas extends Conectar
             isset($_POST["apellido"]) and $_POST["apellido"] == "" or
             isset($_POST["fecha_de_nacimiento"]) and $_POST["fecha_de_nacimiento"] == "" or
             isset($_POST["telf_trabajo"]) and $_POST["telf_trabajo"] == "" or
+<<<<<<< HEAD
+=======
+            isset($_POST["cod_telfper"]) and $_POST["cod_telfper"] == "" or
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
             isset($_POST["telf_personal"]) and $_POST["telf_personal"] == "" or
             isset($_POST["correo"]) and $_POST["correo"] == "" or
             isset($_POST["ciudad"]) and $_POST["ciudad"] == "" or
@@ -960,7 +964,11 @@ Class personas extends Conectar
             }else
             {
                 
+<<<<<<< HEAD
             $fecha = $_POST["fecha_de_nacimiento"];
+=======
+            $fecha = $_POST["fecha_nac"];
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
             $dia = $fecha[0]."".$fecha[1];
             $mes = $fecha[3]."".$fecha[4];
             $anio = $fecha[6]."".$fecha[7]."".$fecha[8]."".$fecha[9];
@@ -981,17 +989,29 @@ Class personas extends Conectar
                 (
                     "insert into personas 
                     values
+<<<<<<< HEAD
                     (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+=======
+                    (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
                     ",
                     parent::comillas_inteligentes($_POST["nombre"]),
                     parent::comillas_inteligentes($_POST["apellido"]),
                     parent::comillas_inteligentes($_POST["cedula"]),
                     parent::comillas_inteligentes($_POST["nacionalidad"]),
+<<<<<<< HEAD
                     parent::comillas_inteligentes($_POST["fecha_de_nacimiento"]),
+=======
+                    parent::comillas_inteligentes($fechaNueva),
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
                     parent::comillas_inteligentes($_POST["grupo"]),
                     parent::comillas_inteligentes($_POST["sexo"]),
                     parent::comillas_inteligentes($_POST["fecha_ingreso"]),
                     parent::comillas_inteligentes($_POST["telf_trabajo"]),
+<<<<<<< HEAD
+=======
+                    parent::comillas_inteligentes($_POST["cod_telfper"]),
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
                     parent::comillas_inteligentes($_POST["telf_personal"]),
                     parent::comillas_inteligentes($_POST["correo"]),
                     parent::comillas_inteligentes($_POST["ciudad"]),
@@ -1049,12 +1069,21 @@ Class personas extends Conectar
 
     public function editar_alumno()
     {
+<<<<<<< HEAD
          //$fecha = $_POST["fecha_nac"];
            // $dia = $fecha[0]."".$fecha[1];
             //$mes = $fecha[3]."".$fecha[4];
             //$anio = $fecha[6]."".$fecha[7]."".$fecha[8]."".$fecha[9];
             
             //$fechaNueva = $anio."-".$mes."-".$dia;
+=======
+         $fecha = $_POST["fecha_nac"];
+            $dia = $fecha[0]."".$fecha[1];
+            $mes = $fecha[3]."".$fecha[4];
+            $anio = $fecha[6]."".$fecha[7]."".$fecha[8]."".$fecha[9];
+            
+            $fechaNueva = $anio."-".$mes."-".$dia;
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
         parent::con();
         $sql=sprintf
         (

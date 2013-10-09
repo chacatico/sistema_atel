@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form name="addProduct" method="post" action="">
 	<table>
 		<thead>
@@ -44,4 +45,52 @@
 			</td>
 		</tr>
 	</table>
+=======
+<form name="addProduct" method="post" action="">
+	<table>
+		<thead>
+			<tr>
+				<th>Producto</th>
+				<th>Cantidad</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th>
+					<select name="id_producto">
+						<option value="0" Selected>Seleccione</option>
+						<?php for ($i=0; $i<sizeof($producto) ; $i++) 
+						{ 
+						?> 
+						<option value="<?php echo $producto[$i]["id_producto"]; ?>">
+							<?php echo $producto[$i]["nombre_producto"]; ?>
+						</option>
+						
+						<?php	
+						} ?>
+					</select>
+				</th>
+				<th>
+					<select name="cantidad">
+						<option value="">--</option>
+						<?php
+						for ($i=0; $i<=20 ; $i++) { 
+							?>
+							<option><?php echo $i; ?></option>
+							<?php
+						 } ?>
+					</select>
+				</th>
+			</tr>
+		</tbody>
+		<tr align="center">
+			<td colspan="2">
+				<input type="text" name="id_factura" value="<?php echo $id; ?>">
+				<input type="hidden" name="agregar" value="si">
+				<input type="submit" class="btn btn-primary" value="Agregar">
+				<input type="reset" class="btn btn-primary" value="Limpiar">
+			</td>
+		</tr>
+	</table>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </form>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="es">
 
@@ -73,4 +74,81 @@
 	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
 </body>
 
+=======
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+
+	<section id="menu">
+		<div class="span12 offset2" id="contenido" style="background:;">
+			<?php 
+			require_once('menu.phtml');
+			?>
+			
+			<div>
+				<?php
+					require_once('views/panel.phtml');
+				?>
+			</div>
+
+			<div class="row">
+				<div class="span8">
+					<div class="well" id="redes">
+						<h2>Instalación Y Configuración de Redes</h2>
+						<br>
+						<p align="justify">
+							Brindamos el mejor servicio de instalación y configuración de redes corporativas y hogareñas, Wi-Fi y/o cableadas, con equipos de última generación. Instalación de firewalls, configuración de Servidores y toda la seguridad que necesites para mantener tus equipos protegidos.
+							<br><br>
+							<h4>Redes Alámbricas e Inalámbricas</h4>
+							<br>
+							<h4>VPN: Redes Privadas:</h4>
+							Contempla una instalación y/ó una configuración de una red  con seguridad la cual dispone de una encriptación para evitar el acceso de intrusos.
+							<br>
+							<h4>LAN: Redes locales:</h4>
+							Diseñamos e implementamos cualquier tipo de red Estrella, Anillo, Bus, etc.
+						</p>
+					</div>
+
+
+				</div>
+
+			</div>
+			
+			
+		</div>
+	</section>
+	</div>
+
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
+</body>
+
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

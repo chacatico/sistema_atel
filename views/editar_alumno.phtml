@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?
 // print_r($_SESSION);
 //     exit();
@@ -200,4 +201,217 @@
 	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
 	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
 </body>
+=======
+<!DOCTYPE HTML>
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		<div style="width:100%;">
+			<center>
+				<h2>Editar Alumno</h2>
+			</center>
+			<hr>
+		</div>
+		<center>
+		<div  style="width:100%; text-align:left;">
+			<section class="well" id="formulario">
+				<?php
+					if (isset($_GET["e"])) {
+						
+						echo $error."<br><br>";
+					}
+
+					$fecha_nueva = Conectar::voltear_fecha($alumnos["0"]['fecha_de_nacimiento']);
+				?>
+				<form name="alumno" action="" method="post">
+					<div class="row">
+						<div class="row-fluid span12" style="background:;">
+							<div class="span6">
+								<fieldset>
+									<legend><center><h3>Datos Personales</h3></center></legend>
+									<center>
+										<table border="0" width="100%">
+											<tr>
+												<td align="right" width="20%">Cédula:</td>
+												<td width="25%">
+													<select name="nacionalidad" class="input-medium">
+														<?php
+															if($alumnos[0]['nacionalidad'] == "V")
+																{
+														?>
+														<option value="V" selected="selected">
+															V- Venezolano
+														</option>
+														<option value="E">
+															E- Extranjero
+														</option>
+														<?php
+															}else
+															{
+														?>
+														<option value="V">
+															V- Venezolano
+														</option>
+														<option value="E" selected="selected">
+															E- Extranjero
+														</option>
+														<?php
+															}
+														?>
+													</select>
+												</td>
+												<td width="10%">
+													<input type="text" name="cedula" class="input-small" maxlength="8" value="<?php echo $alumnos[0]['cedula']; ?>" placeholder="Ej: 00000000"/>
+												</td>
+											</tr>
+											<tr>
+												<td align="right">Nombre: </td>
+												<td>
+													<input class="input-medium" value="<? echo $alumnos[0]['nombre']; ?>" type="text" name="nombre"/>
+												</td>
+												<td align="right">Apellido: </td>
+												<td>
+													<input type="text" class="input-medium" name="apellido" value="<?php echo $alumnos [0]['apellido'];?>" />
+												</td>
+											</tr>
+											<tr>
+												<td align="right">F. Nacimiento: </td>
+												<td>
+													<input class="input-medium" type="text" id="fecha_nac" name="fecha_nac" value="<?php $fecha_nueva = Conectar::voltear_fecha($alumnos["0"]['fecha_de_nacimiento']);echo $fecha_nueva;						?>">
+												</td>
+												<td align="right">Sexo: </td>
+												<td><select name="sexo" class="input-medium">
+														<?php
+															if($alumnos[0]['sexo'] == "Femenino")
+																{
+														?>
+														<option value="Femenino" selected="selected">
+															Femenino
+														</option>
+														<option value="Masculino">
+															Masculino
+														</option>
+														<?php
+															}else
+															{
+														?>
+														<option value="Femenino">
+															Femenino
+														</option>
+														<option value="Masculino" selected="selected">
+															Masculino
+														</option>
+														<?php
+															}
+														?>
+													</select>
+												</td>
+											</tr>
+											<tr>
+											<td align="right">Celular: </td>
+											<td colspan="2">
+												<input type="text" name="cod_telfper" value="<?php echo $alumnos [0]['cod_telfper'];?>" class="input-small"/>
+											
+												<input type="text" name="telf_personal" class="input-small" value="<?php echo $alumnos [0]['telf_personal'];?>" />
+											</td>
+											
+											<td align="right">Correo: </td>
+											<td>
+												<input type="text" class="input-medium" name="correo" value="<?php echo $alumnos [0]['correo'];?>" />
+											</td>
+										</tr>
+										<tr>
+											<td align="right">Profesión: </td>
+											<td>
+												<input type="text" class="input-medium" name="profesion" value="<?php echo $alumnos [0]['profesion'];?>" />
+											</td>
+										</tr>
+										</table>
+									</center>
+								</fieldset>
+							</div>
+
+							<div class="span6">
+								<fieldset>
+									<legend><center><h3>Datos Habitación</h3></center></legend>
+									<center>
+										<table border="0" width="100%">
+											<tr>
+												<td>Estado: </td>
+												<td><input type="text" name="estado" class="input-medium" value="<?php echo $alumnos[0]['estado']?>"/></td>
+												<td>Ciudad: </td>
+												<td><input type="text" name="ciudad" class="input-medium" value="<?php echo $alumnos[0]['ciudad']?>"/></td>
+											</tr>
+											<tr>
+												<td>Dirección: </td>
+												<td><textarea name="direccion" style="resize:none;"><?php echo $alumnos[0]['direccion'];?></textarea></td>
+											</tr>
+											<tr>
+												<td>Teléfono: </td>
+												<td><input type="text" class="input-medium" name="telf_trabajo" value="<?php echo $alumnos[0]['telf_trabajo']?>"/></td>
+											</tr>
+										</table>
+									</center>
+								</fieldset>
+							</div>
+						</div>
+					</div>
+				<center>
+					<div>
+						<tr>
+							<td colspan="2" align="center">
+								<input type="hidden" name="grupo" value="2"/>
+								<input type="hidden" name="id_alumno" value="<?php echo $alumnos[0]["id_persona"];?>"/>
+								<input type="hidden" name="grabar" value="si"/>
+								<input type="submit" name="agregar" class="btn btn-info" value="Editar" onClick="editar_alumno()"/>
+									<a class="btn btn-info"  href="?accion=alumnos">Volver</a>
+							</td>
+						</tr>
+					</div>
+				</center>
+				</form>
+			</section>
+		</div>
+		</center>
+	</section>
+	<footer>
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

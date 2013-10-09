@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <div class="span3 well" id="panel" style="background:;">
 				<center>
 					<h3>Noticias</h3>
@@ -61,4 +62,69 @@
 					</div>
 					
 				</center>
+=======
+<div class="span3 well" id="panel" style="background:;">
+				<center>
+					<h3>Noticias</h3>
+					<hr>
+					<marquee scrolldelay="170" direction="up" onmouseover="this.stop()" onmouseout="this.start()" style="height:150px; background:; margin-left:0px;">
+						<?php 
+							for ($i=0; $i<sizeof($noticias); $i++) 
+							{ 
+						?>
+							<a href="?accion=noticia&id=<?php $noticias[$i]['id_noticia']; ?>"><?php echo $noticias[$i]["titulo"]; ?></a><br>
+						<?php
+							}
+
+						?>
+
+					</marquee>
+					<!-- <hr> -->
+					<a class="btn btn-primary" href="?accion=noticias">Ir a Noticias</a>
+					<hr>
+					
+					<form name="gestor" action="?accion=index" method="post">
+						<table>
+							<thead><h3>Iniciar Sesión</h3></thead>
+							<h5>Administrador - Estudiante</h5>
+							<hr>
+							<tr>
+								<td>Usuario: </td>
+								<td><input type="text" name="usuario" id="usuario" class="input-medium"></td>
+							</tr>
+							<tr>
+								<td>Clave: </td>
+								<td><input type="password" name="clave" id="clave" class="input-medium" placeholder="*****"></td>
+								<input type="hidden" name="consultar" value="si">
+							</tr>
+							<tr>
+								<td align="center" colspan="2"><?php if(isset($_GET['e'])){ echo "<span class='label label-important'>".$mensaje."</span><br><br>"; }?>
+								</td>
+							</tr>
+							<tr>
+								<td  colspan="2" align="center">
+									<input type="submit" name="enviar" value="Ingresar" class="btn btn-primary pull-right" onclick="validar_login();" />
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<a href="#">¿Olvido su contraseña?</a>
+								</td>
+							</tr>
+							<tr>
+								<td colspan="2">
+									<a href="#">Crear cuenta</a>
+								</td>
+							</tr>
+						</table>
+					</form>
+					<hr>
+
+					<div id="">
+						<a class="twitter-timeline" href="https://twitter.com/Miguel_Torress" data-widget-id="324921152839483392">Tweets por @ATEL</a>
+						<!--<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>-->
+					</div>
+					
+				</center>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 			</div>

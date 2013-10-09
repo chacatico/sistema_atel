@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?
 // print_r($_SESSION);
 //     exit();
@@ -110,4 +111,118 @@
 	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
 	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
 </body>
+=======
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		<div style="width:100%;">
+				<center>
+					<h2>Editar Alumno</h2>
+				</center>
+				<hr>
+		</div>
+		<center>
+		<div  style="width:100%; text-align:left;">
+		<section class="well" id="formulario">
+				<?php
+					if (isset($_GET["e"])) {
+						
+						echo $error."<br><br>";
+					}
+				?>
+			<form name="editar_curso" action="?accion=editar_curso" method="post">
+				<center>
+				<table border="0">
+				<tr>
+					<td>Nombre: </td>
+					<td>
+						<input type="text" name="nombre" class="input-small" value="<?php echo $curso[0]["nombre"]; ?>"/>
+					</td>
+				</tr>
+				<tr>
+					<td>Nivel: </td>
+					<td><input type="text" name="nivel" value="<?php echo $curso[0]["nivel"]; ?>" /></td>
+				</tr>
+				<tr>
+					<td>Horario: </td>
+					<td><input type="text" name="horario" value="<?php echo $curso[0]["horario"]; ?>" /></td>
+				</tr>
+				<tr>
+					<td>Fecha de Inicio: </td>
+					<td><input class="" type="text" id="fecha_inicio" name="fecha_inicio" value="<?php echo $curso[0]["fecha_inicio"]; ?>"></td>
+				</tr>
+				<tr>
+					<td>Fecha de Culminación: </td>
+					<td><input type="text" name="fecha_final" value="<?php echo $curso[0]["fecha_final"]; ?>" /></td>
+				</tr>
+			<tr>
+				<td>Capacidad: </td>
+				<td><input type="text" name="capacidad" value="<?php echo $curso[0]["capacidad"]; ?>" /></td>
+			</tr>
+			<tr>
+				<td>Profesor: </td>
+				<td><input type="text" name="profesor" value="<?php echo $curso[0]["profesor"]; ?>"/></td>
+			</tr>		
+			<tr>
+				<td colspan="2" align="center">
+				
+				
+				<input type="hidden" name="id_curso" value="<?php echo $curso[0]["id_curso"];?>"/>
+				<input type="hidden" name="grabar" value="si"/>
+				<input type="submit" name="agregar" class="btn btn-info" value="Editar" onClick="editar_curso()"/>
+				<a class="btn btn-info"  href="?accion=cursos1">Volver</a>
+				</td>
+			</tr>
+		
+			</table>		
+		</form>
+	</section>
+
+		</div>
+		</center>
+			
+
+	</section>
+
+
+	<footer style=" clear:both;">
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </html>

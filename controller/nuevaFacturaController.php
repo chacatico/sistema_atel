@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 if (isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 1) 
 {
@@ -19,4 +20,27 @@ if (isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSI
 	header("Location: ".Conectar::con()."?accion=home");
 	exit();
 }
+=======
+<?php
+if (isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSION["usuario_lvl"] == 1) 
+{
+	require_once("model/almacenModel.php");
+	require_once("model/personasModel.php");
+	$fac = new almacen;
+	$ven = new personas;
+	// print_r($_POST);
+	if(isset($_POST["grabar"])){
+
+		$fac->registrar_factura();
+
+	}else{
+
+		$vendedor= $ven->get_personal();
+	}
+		require_once("views/nuevaFactura.phtml");
+}else{
+	header("Location: ".Conectar::con()."?accion=home");
+	exit();
+}
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 ?>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <form name="agregar_noticia" id="agregar_noticia" method="post" action="">
 	<table>
 		<tr>
@@ -17,4 +18,25 @@
 			</td>
 		</tr>
 	</table>
+=======
+<form name="agregar_noticia" id="agregar_noticia" method="post" action="">
+	<table>
+		<tr>
+			<td>Título: </td>
+			<td><input type="text" class="imput-large" name="titulo" id="titulo"></td>
+		</tr>
+		<tr>
+			<td>Mensaje: </td>
+			<td><textarea name="mensaje" id="mensaje"></textarea></td>
+		</tr>
+		<tr align="center">
+			<td colspan="2">
+				<input type="hidden" name="grabar" id="grabar" value="si">
+				<input type="hidden" name="autor" id="autor" value="<?php echo $_SESSION["usuario_id"]; ?>">
+				<button class="btn btn-primary">Guardar</button>
+				<button class="btn btn-primary" type="reset">Limpiar</button>
+			</td>
+		</tr>
+	</table>
+>>>>>>> 8b3fee72c8f53d8856300fe3ce99058a40d12624
 </form>
