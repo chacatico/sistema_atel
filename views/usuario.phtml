@@ -1,0 +1,48 @@
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system">
+		
+			
+			
+
+	</section>
+
+
+	<footer>
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+</html>

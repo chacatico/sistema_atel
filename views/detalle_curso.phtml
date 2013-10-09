@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="public/css/component.css">
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+		<section id="menu">
+			<div class="span12 offset2" id="contenido" style="background:;">
+				<?php 
+					require_once('menu.phtml');
+				?>
+				
+				<div>
+					
+
+				<div class="row">
+					<div class="span10  offset1" style="background:;">
+						<div class="well">
+							<center><h2>Curso Desarrollo Web (XHTML Y CSS)</h2></center>
+							<hr>
+							<div class="row-fluid">
+								<div class="span8 offset1" style="background:; ">
+									<iframe width="500" height="315" src="http://www.youtube.com/embed/RLIr1JmvCBI" frameborder="0" 			allowfullscreen>
+									</iframe>
+								</div>
+								
+								<div class="span4 offset2" style="background:; font-size:10px;">
+									<div class="well">
+										<center><h3>Información</h3></center>
+										<hr>
+										<p><text style="font-weight: bold">Instructor:</text> José Rengifo</p>
+										<p><text style="font-weight: bold">Inversión:</text> 380 BsF</p>
+										<p><text style="font-weight: bold">Horario:</text> 8:00 AM - 12:00 PM</p>
+										<p><text style="font-weight: bold">Fecha de Inicio:</text> 22/Jun/2013</p>
+
+										<center><input type="button" role="button" data-toggle="modal" class="btn btn-info input-medium" href="#myModal" value="Inscríbete Ya!"/></center>
+									</div>
+								</div>
+								<div class="row">
+									<!-- <div style="width">
+									</div> -->
+									<div class="span9" style="" id="descripcion_curso">
+										<center><h3>Descripción</h3></center>
+										
+										<p>
+											Curso de Diseño Web donde conocerás todos los aspectos referente al área del diseño desde la conceptualización y primeros pasos a seguir para crear tu sitio web con los datos dados por un cliente hasta la concepción y diseño del sitio. (Recomendado para personas que están comenzando en el mundo de la web).
+										</p>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+				<br><br><br><br><br><br><br>
+			</div>
+		</section>
+	</div>
+
+	<div id="myModal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header" style="background:#262626; color:#f2f2f2;">
+		    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+		    <h3 id="myModalLabel">Pre-Inscripción</h3>
+		</div>
+
+	 	<div class="modal-body">
+		    <p>
+		    	<?php
+		    		require_once("controller/pre_inscripcionController.php");
+		    	?>
+		    </p>
+	  	</div>
+
+	  	<div class="modal-footer" style="background:#262626;">
+	    	<button class="btn btn-danger" data-dismiss="modal" aria-hidden="true">Cerrar</button>
+	  	</div>
+	</div>
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap-collapse.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/modernizr.custom.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/classie.js"></script>
+
+</body>
+
+</html>

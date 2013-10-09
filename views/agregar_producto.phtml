@@ -1,0 +1,159 @@
+<!DOCTYPE HTML>
+<?
+// print_r($_SESSION);
+//     exit();
+?>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+
+	<script type="text/javascript">
+		function habilita(){
+			document.agregar_producto.codigo.disabled = false;
+		}
+
+		function deshabilita(){
+			document.agregar_producto.codigo.disabled = true;
+			document.agregar_producto.codigo.value = "";
+		}
+	</script>
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header_system.phtml');
+		?>
+	</header>
+
+	<div id="menu_sys">
+		<?php
+			require_once('views/menu_system.phtml');
+		?>
+	</div>
+
+	<section id="contenido_system" class="well">
+		<center>
+			<h2>Nuevo Producto</h2>
+			<hr>
+		</center>
+		
+	<center>
+	<form name="agregar_producto" method="post" action="" id="agregar_producto">
+		<table>
+			<tr>
+				<td>
+					Nombre: 
+				</td>
+				<td>
+					<input type="text" name="nombre"/>
+				</td>
+			</tr>
+			<tr align="center">
+				<td >
+					Tipo
+				</td>
+				<td>
+					Producto
+					<input type="radio" name="tipo" onclick="habilita()" value="producto" />
+					Servicio
+					<input type="radio" name="tipo" onclick="deshabilita()" value="servicio" />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Código: 
+				</td>
+				<td>
+					<input type="text" name="codigo" disabled />
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Descripción
+				</td>
+				<td><textarea name="descripcion" id="descripcion"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Costo
+				</td>
+				<td>
+					<input type="text" name="costo" id="costo"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					PVP
+				</td>
+				<td>
+					<input type="text" name="pvp"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Cantidad
+				</td>
+				<td>
+					<input type="text" name="cantidad"/>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Categoría
+				</td>
+				<td>
+					<select name="categoria" id="categoria">
+						<option value="0">Seleccione</option>
+						<?php
+						echo $categoria[$i]["nombre_categoria"];
+							for ($i=0; $i<sizeof($categoria); $i++) { 
+							
+						?>
+							<option value="<?php echo $categoria[$i]["id_categoria"];?>">
+								<?php echo $categoria[$i]["nombre_categoria"]; ?>
+							</option>
+						<?php
+						}
+						?>
+					</select>
+				</td>
+			</tr>
+			<tr align="center">
+				<td colspan="2">
+					<input type="hidden" name="grabar" id="grabar" value="si"/>
+					<input type="submit"  id="enviar" value="Guardar" class="btn btn-primary" />
+					<input type="reset" value="Limpiar" class="btn btn-primary"/>
+				</td>
+			</tr>
+		</table>	
+	</form>
+</center>			
+			
+
+	</section>
+
+
+	<footer>
+		<?php 
+			require_once('views/footer_system.phtml');
+		?>
+	</footer>
+
+	<script src="<?php echo Conectar::ruta()?>public/js/jquery.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/funciones.js"></script>
+    <script src="<?php echo Conectar::ruta()?>public/js/modernizr.custom.js"></script>
+	<script src="<?php echo Conectar::ruta()?>public/js/bootstrap.js"></script>
+</body>
+</html>
+
+
+

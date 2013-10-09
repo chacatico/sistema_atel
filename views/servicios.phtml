@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8" />
+	<title>.::ATEL~Telecomunicaciones::..</title>
+	<!--Aqui van Mis Archivos CSS-->
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap-responsive.css">
+	<link rel="stylesheet" type="text/css" href="public/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="public/css/fade.css">
+	<link rel="icon" type="image/png" href="public/img/favicon.png" />
+
+</head>
+
+<body>
+	<header>
+		<?php
+			require_once('views/header.phtml');
+		?>
+	</header>
+
+	<div class="row-fluid">
+	<section id="menu">
+		<div class="span12 offset2" id="contenido" style="background:;">
+			<?php 
+			require_once('menu.phtml');
+			?>
+			
+			<div>
+				<?php
+					require_once('views/panel.phtml');
+				?>
+			</div>
+			
+			<!-- <div class="span4 breadcrumb" id="breadcrumbb">
+				<ul>Te encuentras en : 
+					 <li class="active">Cursos</li>
+				</ul>
+			</div> -->
+
+			<div class="row">
+				<div class="span8">
+					<div id="desarrollo" class="well">
+						<center><h2>¡ Servicios Que Ofrecemos !</h2>
+
+						<div class="row-fluid">
+							<ul class="portfolio-items">
+								<li class="">
+									<div class="caption6 ">
+										<h3>Soporte</h3>
+										<p align="justify">Soporte 24 hrs por correo electrónico..</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/27.jpg">
+								</li>
+								<li class="">
+									<div class="caption5 ">
+										<h3>Sistemas Operativos</h3>
+										<p align="justify">Instalación y Configuración de S.O (Windows, Linux).</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/47.jpg">
+								</li>
+								<li class="">
+									<div class="caption12 ">
+										<h3>Software</h3>
+										<p align="justify">Instalación de software para su equipo, Antivirus, Ofimáticos, etc.</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/27.jpg">
+								</li>
+								<li class="">
+									<div class="caption13 ">
+										<h3>Limpieza</h3>
+										<p align="justify">Limpieza externa e interna para mantener su equipo en buen estado.</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/47.jpg">
+								</li>
+								<li class="">
+									<div class="caption14 ">
+										<h3>Hardware</h3>
+										<p align="justify">Instalación de componentes para equipos de escritorios y portátiles.</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/27.jpg">
+								</li>
+								<li class="">
+									<div class="caption15 ">
+										<h3>Redes</h3>
+										<p align="justify">Instalación y mantenemiento de Redes.</p>
+										<a href="#" class="pf_button">Details</a>
+									</div>
+									<img src="public/img/47.jpg">
+								</li>
+							</ul>
+						</div>
+						</center>
+
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</section>
+	</div>
+
+
+	
+	<footer>
+		<?php
+			require_once('views/footer.phtml');
+		?>
+	</footer>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap-collapse.js"></script>
+	<!--<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/modernizr.custom.29473.js"></script>
+	<!--<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/jquery-1.4.2.min.js"></script>-->
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/jquery.js"></script>
+	<script type="text/javascript" src="<?php echo Conectar::ruta(); ?>public/js/bootstrap.js"></script>
+</body>
+
+</html>
