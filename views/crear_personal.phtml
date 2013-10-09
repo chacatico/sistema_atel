@@ -47,7 +47,7 @@ if (isset($_GET['e'])) {
 						
 
 						
-						<form name="alumnos" action="" method="post" autocomplete="">
+						<form name="alumnos" action="" method="post" autocomplete="off">
 							<div class="row">
 								<div class="row-fluid span12" style="background:;">
 									<div class="span6">
@@ -58,7 +58,7 @@ if (isset($_GET['e'])) {
 													<tr>
 														<td align="right" width="20%">Cédula:</td>
 														<td width="25%">
-															<select name="nacionalidad" class="input-medium">
+															<select name="nacionalidad" class="input-medium" required="required">
 																<option value="0" selected="selected">
 																	Seleccione...
 																</option>
@@ -71,23 +71,23 @@ if (isset($_GET['e'])) {
 															</select>
 														</td>
 														<td width="10%">
-															<input type="text" name="cedula" class="input-small" maxlength="8" placeholder="Ej: 00000000"/>
+															<input type="text" name="cedula" class="input-small" maxlength="8" placeholder="Ej: 00000000" required="required" title="Ingrese cédula" pattern="[0-9]+" />
 														</td>
 													</tr>
 													<tr>
 														<td align="right">Nombre: </td>
 														<td>
-															<input class="input-medium" type="text" name="nombre"/>
+															<input class="input-medium" type="text" name="nombre" required="Ingrese sus dos nombres" pattern="[a-zA-Z]+ [a-zA-Z]+" title="Ingrese nombre" maxlength="20" />
 														</td>
 														<td align="right">Apellido: </td>
 														<td>
-															<input type="text" class="input-medium" name="apellido"/>
+															<input type="text" class="input-medium" name="apellido" required="required" pattern="[a-zA-Z]+ [a-zA-Z]+" title="Ingrese Apellido" maxlength="20"/>
 														</td>
 													</tr>
 													<tr>
 														<td align="right">F. Nacimiento: </td>
 														<td>
-															<input class="input-medium" type="text" id="fecha_nac" name="fecha_nac" value="">
+															<input class="input-medium" type="date" id="fecha_nac" name="fecha_nac"/>
 														</td>
 														<td align="right">Sexo: </td>
 														<td>
@@ -107,17 +107,29 @@ if (isset($_GET['e'])) {
 													<tr>
 														<td align="right">Celular: </td>
 														<td>
-															<input type="text" name="telf_personal" class="input-medium"/>
+															<input type="text" name="telf_personal" class="input-medium" required="required" pattern="[0-9]+" maxlength="7" />
 														</td>
 														<td align="right">Correo: </td>
 														<td>
-															<input type="text" class="input-medium" name="correo"/>
+															<input type="email" class="input-medium" name="correo" required="required"/>
 														</td>
 													</tr>
 													<tr>
 														<td align="right">Profesión: </td>
 														<td>
-															<input type="text" class="input-medium" name="profesion"/>
+															<select>
+																<option value="0">
+																	Seleccione
+																</option>
+																<?php
+																for ($p=0; $p <sizeof($profesion) ; $p++) { 
+																?>
+																<option value="<?php echo $profesion[$p]["id_profesion"];?>"><?php echo $profesion[$p]["nombre_profesion"];?>
+																</option>
+																<?php
+																}
+																?>
+															</select>
 														</td>
 													</tr>
 												</table>
@@ -149,11 +161,11 @@ if (isset($_GET['e'])) {
 															</select>
 														</td>
 														<td>Ciudad: </td>
-														<td><input type="text" name="ciudad"/></td>
+														<td><input type="text" name="ciudad" required title="Ingrese la ciudad" pattern="[a-zA-Z]+ [a-zA-Z]+" maxlength="30"/></td>
 													</tr>
 													<tr>
 														<td>Teléfono: </td>
-														<td><input type="text" class="input-medium" name="telf_trabajo"/></td>
+														<td><input type="text" class="input-medium" name="telf_trabajo" required title="Ingrese número de Teléfono" pattern="[0-9]+" maxlengt="7" /></td>
 													</tr>
 												</table>
 											</center>

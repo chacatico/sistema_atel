@@ -12,6 +12,7 @@ if(isset($_SESSION["usuario_id"]) and $_SESSION["usuario_id"] != "" and $_SESSIO
 		$pers->crear_personal();
 	}else{
 		$estados = $pers->get_estados();
+		$profesion = $pers->get_profesion();
 	}
 		require_once('views/crear_personal.phtml');
 	

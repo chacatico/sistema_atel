@@ -569,7 +569,7 @@ Class personas extends Conectar
             exit();
             
             }else{
-                print_r($_POST);
+                // print_r($_POST);
 
             parent::con();
             $query=sprintf
@@ -592,8 +592,8 @@ Class personas extends Conectar
                     parent::comillas_inteligentes($_POST["estado"]),
                     parent::comillas_inteligentes($_POST["profesion"])
                     );
-                echo $query;            
-                exit();
+                // echo $query;            
+                // exit();
                 mysql_query($query);
                 $var = mysql_insert_id();
                 echo utf8_decode("<script type='text/javascript'>
