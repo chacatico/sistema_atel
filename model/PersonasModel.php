@@ -569,33 +569,31 @@ Class personas extends Conectar
             exit();
             
             }else{
+                print_r($_POST);
 
             parent::con();
             $query=sprintf
                 (
                     "insert into personas 
                     values
-                    (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s);
+                    (NULL, %s, %s, %s, %s, %s, %s, %s, NOW(), %s, %s, %s, %s, %s, %s);
                     ",
                     parent::comillas_inteligentes($_POST["nombre"]),
                     parent::comillas_inteligentes($_POST["apellido"]),
                     parent::comillas_inteligentes($_POST["cedula"]),
                     parent::comillas_inteligentes($_POST["nacionalidad"]),
-                    parent::comillas_inteligentes($_POST["fecha_de_nacimiento"]),
-                    parent::comillas_inteligentes($_POST["direccion"]),
+                    parent::comillas_inteligentes($_POST["fecha_nac"]),
                     parent::comillas_inteligentes($_POST["grupo"]),
                     parent::comillas_inteligentes($_POST["sexo"]),
-                    parent::comillas_inteligentes($_POST["fecha_ingreso"]),
                     parent::comillas_inteligentes($_POST["telf_trabajo"]),
                     parent::comillas_inteligentes($_POST["telf_personal"]),
                     parent::comillas_inteligentes($_POST["correo"]),
                     parent::comillas_inteligentes($_POST["ciudad"]),
                     parent::comillas_inteligentes($_POST["estado"]),
-                    parent::comillas_inteligentes($_POST["cod_postal"]),
                     parent::comillas_inteligentes($_POST["profesion"])
                     );
-                //echo $query;            
-                //exit();
+                echo $query;            
+                exit();
                 mysql_query($query);
                 $var = mysql_insert_id();
                 echo utf8_decode("<script type='text/javascript'>

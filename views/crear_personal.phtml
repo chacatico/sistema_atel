@@ -47,7 +47,7 @@ if (isset($_GET['e'])) {
 						
 
 						
-						<form name="alumnos" action="" method="post">
+						<form name="alumnos" action="" method="post" autocomplete="">
 							<div class="row">
 								<div class="row-fluid span12" style="background:;">
 									<div class="span6">
@@ -133,45 +133,23 @@ if (isset($_GET['e'])) {
 													<tr>
 														<td>Estado: </td>
 														<td>
+
 															<select name="estado" class="input-medium">
 															<option value="0" selected="selected">
 																Seleccione...
 															</option>
-																<option value="1">Amazonas</option>
-																<option value="2">Anzoátegui</option>
-																<option value="3">Apure</option>
-																<option value="4">Aragua</option>
-																<option value="5">Barinas</option>
-																<option value="6">Bolivar</option>
-																<option value="7">Carabobo</option>
-																<option value="8">Cojedes</option>
-																<option value="9">Delta Amacuro</option>
-																<option value="10">Distrito Capital</option>
-																<option value="11">Falcón</option>
-																<option value="12">Guarico</option>
-																<option value="13">Lara</option>
-																<option value="14">Mérida</option>
-																<option value="15">Miranda</option>
-																<option value="16">Monagas</option>
-																<option value="17">Nueva Esparta</option>
-																<option value="18">Portuguesa</option>
-																<option value="19">Sucre</option>
-																<option value="20">Táchira</option>
-																<option value="21">Trujillo</option>
-																<option value="22">Yaracuy</option>
-																<option value="23">Zulia</option>
-																<option value="24">Vargas</option>
+															<?php for ($i=0; $i<sizeof($estados) ; $i++) { 
+															?>
+															<option value="<?php echo $estados [$i]["id_estado"];?>">
+															<?php echo $estados[$i]["estado"];?>
+															</option>
+
+															<?php
+															} ?>
 															</select>
 														</td>
 														<td>Ciudad: </td>
 														<td><input type="text" name="ciudad"/></td>
-													</tr>
-													<tr>
-														<td>Cod. Postal: </td>
-														<td><input type="text" class="input-small" name="cod_postal"/></td>
-														<td>Dirección: </td>
-														<td><textarea name="direccion" style="resize:none; " /></textarea></td>
-														
 													</tr>
 													<tr>
 														<td>Teléfono: </td>
